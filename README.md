@@ -116,14 +116,14 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
         - [ ] ID (primary key, int, auto_increment, unique)
         - [ ] Username (string, unique)
         - [ ] Password (string)
-    - [ ] Post
-        - [ ] ID (primary key, int, auto_incrememnt, unique)
-        - [ ] Title (string)
-        - [ ] Contents (string)
-        - [ ] AuthorID (foreign key, int, User.ID)
-        - [ ] DateCreated (datetime)
-        - [ ] WasEditted (bool, default false)
-        - [ ] DateLastEdited (datetime)
+    - [x] Post
+        - [x] ID (primary key, int, auto_incrememnt, unique)
+        - [x] Title (string)
+        - [x] Contents (string)
+        - [x] AuthorID (foreign key, int, User.ID)
+        - [x] DateCreated (datetime)
+        - [x] WasEditted (bool, default false)
+        - [x] DateLastEdited (datetime)
     - [ ] Comment
         - [ ] id (int, auto_increment, unique)
         - [ ] Contents (string)
