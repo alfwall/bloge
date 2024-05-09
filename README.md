@@ -112,10 +112,10 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
         - [ ] Returns to Homepage, ends session
 
 - [ ] MODELS
-    - [ ] User
-        - [ ] ID (primary key, int, auto_increment, unique)
-        - [ ] Username (string, unique)
-        - [ ] Password (string)
+    - [x] User
+        - [x] ID (primary key, int, auto_increment, unique)
+        - [x] Username (string, unique)
+        - [x] Password (string)
     - [x] Post
         - [x] ID (primary key, int, auto_incrememnt, unique)
         - [x] Title (string)
