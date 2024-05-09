@@ -124,10 +124,10 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
         - [x] DateCreated (datetime)
         - [x] WasEditted (bool, default false)
         - [x] DateLastEdited (datetime)
-    - [ ] Comment
-        - [ ] id (int, auto_increment, unique)
-        - [ ] Contents (string)
-        - [ ] DateCreated (datetime)
-        - [ ] AuthorID (foreign key, int, User.ID)
-        - [ ] PostID (foreign key, int, Post.ID)
+    - [x] Comment
+        - [x] id (int, auto_increment, unique)
+        - [x] Message (string)
+        - [x] DateCreated (datetime)
+        - [x] AuthorID (foreign key, int, User.ID)
+        - [x] PostID (foreign key, int, Post.ID)
 
