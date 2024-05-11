@@ -66,16 +66,9 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 ## TODO
 
 - [ ] Uses Handlebars.js
-
 - [ ] Has user accounts with passwords
 - [ ] Passwords are secure
 - [ ] Logged-in Sessions time out eventually
-
-- [ ] Users have many Posts
-- [ ] Posts have 1 User
-- [ ] Posts have many Comments
-- [ ] Comments have 1 Post
-
 - [ ] Deployed to Heroku
 
 - [ ] VIEWS
@@ -111,7 +104,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
     - [ ] Logout (modal?)
         - [ ] Returns to Homepage, ends session
 
-- [ ] MODELS
+- [x] MODELS
     - [x] User
         - [x] ID (primary key, int, auto_increment, unique)
         - [x] Username (string, unique)
@@ -130,4 +123,9 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
         - [x] DateCreated (datetime)
         - [x] AuthorID (foreign key, int, User.ID)
         - [x] PostID (foreign key, int, Post.ID)
+- [x] Write seeds
 
+- [x] Users have many Posts
+- [x] Posts have 1 User
+- [x] Posts have many Comments
+- [x] Comments have 1 Post

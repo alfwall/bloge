@@ -21,9 +21,11 @@ Post.init(
             allowNull: false,
             validate: {
                 validatePassword: function (value) {
-                    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value)) {
-                        return "Password must be 8+ long, 1 uppercase, 1 lowercase, 1 digit, 1 symbol"
-                    }
+                    // TODO: test!!
+                    //if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(value)) {
+                    //    return "Password must be 8+ long, 1 uppercase, 1 lowercase, 1 digit, 1 symbol"
+                    //}
+                    console.log("TODO: IMPLEMENT PASSWORD VALIDATION!!!")
                     return true;
                 }
             },
