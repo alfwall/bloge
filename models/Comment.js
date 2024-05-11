@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model { }
 
-Post.init(
+Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,11 +15,11 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        author_id: {
+        // date_created: {
+        //     type: DataTypes.DATE,
+        //     //allowNull: false
+        // },
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -39,6 +39,7 @@ Post.init(
     {
         sequelize,
         freezeTableName: true,
+        timestamps: false,
         underscored: true,
         modelName: 'comment'
     }

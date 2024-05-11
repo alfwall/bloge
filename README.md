@@ -113,7 +113,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
         - [x] ID (primary key, int, auto_incrememnt, unique)
         - [x] Title (string)
         - [x] Contents (string)
-        - [x] AuthorID (foreign key, int, User.ID)
+        - [x] UserID (foreign key, int, User.ID)
         - [x] DateCreated (datetime)
         - [x] WasEditted (bool, default false)
         - [x] DateLastEdited (datetime)
@@ -121,7 +121,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
         - [x] id (int, auto_increment, unique)
         - [x] Message (string)
         - [x] DateCreated (datetime)
-        - [x] AuthorID (foreign key, int, User.ID)
+        - [x] UserID (foreign key, int, User.ID)
         - [x] PostID (foreign key, int, Post.ID)
 - [x] Write seeds
 

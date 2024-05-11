@@ -19,7 +19,7 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: false
         },
-        author_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -27,22 +27,21 @@ Post.init(
                 key: "id"
             }
         },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
+        //date_created: {
+        //    type: DataTypes.DATE
+        //},
         has_been_editted: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,
             defaultValue: false
         },
-        date_last_editted: {
-            type: DataTypes.DATE
-        }
+        // date_last_editted: {
+        //     type: DataTypes.DATE
+        // }
     },
     {
         sequelize,
         freezeTableName: true,
+        timestamps: false,
         underscored: true,
         modelName: 'post'
     }

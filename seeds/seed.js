@@ -9,23 +9,25 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const users = await User.bulkCreate(userSeedData, {
-    individualHooks: true,
+    //individualHooks: true,
     returning: true,
   });
 
   let posts = [];
   for (const post of postSeedData) {
-    const newPost = await Post.create({...post,
-        author_id: users[Math.floor(Math.random() * users.length)].id
+    const newPost = await Post.create({
+      ...post,
+      user_id: users[Math.floor(Math.random() * users.length)].id
     });
     posts.push(newPost);
   }
 
   let comments = [];
   for (const comment of commentSeedData) {
-    const newComment = await Comment.create({...comment,
-        author_id: users[Math.floor(Math.random() * users.length)].id,
-        post_id: posts[Math.floor(Math.random() * posts.length)].id
+    const newComment = await Comment.create({
+      ...comment,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
+      post_id: posts[Math.floor(Math.random() * posts.length)].id
     });
     comments.push(newComment);
   }
