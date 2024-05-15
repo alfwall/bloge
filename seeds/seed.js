@@ -9,9 +9,12 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const users = await User.bulkCreate(userSeedData, {
-    //individualHooks: true,
+    individualHooks: true,
     returning: true,
   });
+
+  
+  //process.exit(0);
 
   let posts = [];
   for (const post of postSeedData) {
@@ -21,6 +24,9 @@ const seedDatabase = async () => {
     });
     posts.push(newPost);
   }
+
+  
+  //process.exit(0);
 
   let comments = [];
   for (const comment of commentSeedData) {
