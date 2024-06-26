@@ -6,6 +6,79 @@ An express website using Handlebars.js and an MVC folder structure.
 ## The Result
 
 
+# Instructions
+1. `npm i`
+2. `mysql -u [yourlogin] -p`
+3. `[yourpassword]`
+4. `source ./db/schema.sql`
+5. `quit`
+6. `npm run seed`
+7. `npm start`
+
+
+## TODO
+
+- [ ] VIEWS
+    - [ ] Nav bar (always visible partial)
+        - [ ] Homepage (logo/title link?)
+        - [ ] Dashboard ("My Posts")
+        - [ ] Login button (if not logged in)
+        - [ ] Logout button (if logged in)
+    - [ ] Homepage (default page whether logged in or not)
+        - [ ] Always available regardless of login status
+        - [ ] See all recent posts from all Users
+        - [ ] Option to comment on posts
+        - [ ] Prompt to Log In if any other actions
+    - [ ] Dashboard (logged-in only)
+        - [ ] See all recent posts by Logged-In User
+        - [ ] "New Post" button
+        - [ ] "Edit Post" button under each post
+    - [ ] View Post (always available)
+        - [ ] Title
+        - [ ] Author
+        - [ ] Contents
+        - [ ] Comments
+        - [ ] Add Comment button (redirects to login if not logged in)
+    - [ ] Sign Up (modal?)
+        - [ ] Requires username, password
+        - [ ] Validate that username is unique
+        - [ ] Validate that password is secure enough
+        - [ ] Submit button
+    - [ ] Login (modal?)
+        - [ ] Requires username, password
+        - [ ] Validate that username exists and password is correct
+        - [ ] Starts a new session
+    - [ ] Logout (modal?)
+        - [ ] Returns to Homepage, ends session
+- [x] MODELS
+    - [x] User
+        - [x] ID (primary key, int, auto_increment, unique)
+        - [x] Username (string, unique)
+        - [x] Password (string)
+    - [x] Post
+        - [x] ID (primary key, int, auto_incrememnt, unique)
+        - [x] Title (string)
+        - [x] Contents (string)
+        - [x] UserID (foreign key, int, User.ID)
+        - [x] DateCreated (datetime)
+        - [x] WasEditted (bool, default false)
+        - [x] DateLastEdited (datetime)
+    - [x] Comment
+        - [x] id (int, auto_increment, unique)
+        - [x] Message (string)
+        - [x] DateCreated (datetime)
+        - [x] UserID (foreign key, int, User.ID)
+        - [x] PostID (foreign key, int, Post.ID)
+- [x] Write seeds
+- [x] Users have many Posts
+- [x] Posts have 1 User
+- [x] Posts have many Comments
+- [x] Comments have 1 Post
+- [ ] Uses Handlebars.js
+- [ ] Has user accounts with passwords
+- [ ] Passwords are secure
+- [ ] Logged-in Sessions time out eventually
+- [ ] Deployed to Heroku
 
 ## User Story
 AS A developer who writes about tech
@@ -62,70 +135,3 @@ THEN I am signed out of the site.
 
 WHEN I am idle on the site for more than a set time,
 THEN I am able to view posts and comments but I am prompted to log in again before I can add, update, or delete posts.
-
-## TODO
-
-- [ ] Uses Handlebars.js
-- [ ] Has user accounts with passwords
-- [ ] Passwords are secure
-- [ ] Logged-in Sessions time out eventually
-- [ ] Deployed to Heroku
-
-- [ ] VIEWS
-    - [ ] Nav bar (always visible partial)
-        - [ ] Homepage (logo/title link?)
-        - [ ] Dashboard ("My Posts")
-        - [ ] Login button (if not logged in)
-        - [ ] Logout button (if logged in)
-    - [ ] Homepage (default page whether logged in or not)
-        - [ ] Always available regardless of login status
-        - [ ] See all recent posts from all Users
-        - [ ] Option to comment on posts
-        - [ ] Prompt to Log In if any other actions
-    - [ ] Dashboard (logged-in only)
-        - [ ] See all recent posts by Logged-In User
-        - [ ] "New Post" button
-        - [ ] "Edit Post" button under each post
-    - [ ] View Post (always available)
-        - [ ] Title
-        - [ ] Author
-        - [ ] Contents
-        - [ ] Comments
-        - [ ] Add Comment button (redirects to login if not logged in)
-    - [ ] Sign Up (modal?)
-        - [ ] Requires username, password
-        - [ ] Validate that username is unique
-        - [ ] Validate that password is secure enough
-        - [ ] Submit button
-    - [ ] Login (modal?)
-        - [ ] Requires username, password
-        - [ ] Validate that username exists and password is correct
-        - [ ] Starts a new session
-    - [ ] Logout (modal?)
-        - [ ] Returns to Homepage, ends session
-
-- [x] MODELS
-    - [x] User
-        - [x] ID (primary key, int, auto_increment, unique)
-        - [x] Username (string, unique)
-        - [x] Password (string)
-    - [x] Post
-        - [x] ID (primary key, int, auto_incrememnt, unique)
-        - [x] Title (string)
-        - [x] Contents (string)
-        - [x] UserID (foreign key, int, User.ID)
-        - [x] DateCreated (datetime)
-        - [x] WasEditted (bool, default false)
-        - [x] DateLastEdited (datetime)
-    - [x] Comment
-        - [x] id (int, auto_increment, unique)
-        - [x] Message (string)
-        - [x] DateCreated (datetime)
-        - [x] UserID (foreign key, int, User.ID)
-        - [x] PostID (foreign key, int, Post.ID)
-- [x] Write seeds
-
-- [x] Users have many Posts
-- [x] Posts have 1 User
-- [x] Posts have many Comments
-- [x] Comments have 1 Post
